@@ -9,12 +9,13 @@ body {
   padding: 150px 0;
 }
 
-/* .services {
-  background: url('./image/building.jpg') no-repeat center center;
+.our-services{
+  /* background: url('./image/building.jpg') no-repeat center center; */
+  background-color: gray;
   background-size: cover;
-  color: white;
+  /* color: white; */
   padding: 150px 0;
-} */
+}
 
 .header h1 {
   font-size: 3rem;
@@ -29,11 +30,6 @@ body {
 .features h3 {
   margin-bottom: 20px;
 }
-
-/* .footer {
-  background-color: #403834;
-  color: white;
-} */
 
 .navbar{
   background-color: darkslategray;
@@ -202,3 +198,64 @@ tr img{
   height: 30px;
   padding-right: 10px
 }
+
+
+/* beginning carousel */
+
+.carousel-caption {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  border-radius: 10px;
+}
+.card {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: none;
+}
+.docs:hover{
+
+  /* background-color: rgba(75, 74, 74, 0.9); */
+  transition: background-color 0.3s ease;
+  transform: translateY(-10px);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+}
+.card-body {
+  transition: background-color 0.3s ease;
+}
+
+/* line */
+
+.line {
+  display: flex;
+  flex-direction: row;
+  font-weight: bolder;
+  color: #343a40;
+  margin-bottom: 30px;
+}
+.line:before, .line:after{
+  content: "";
+  flex: 1 1;
+  border-bottom: 1px solid;
+  margin: auto;
+  width: 20px;
+}
+.line:before {
+  margin-right: 10px
+}
+.line:after {
+  margin-left: 10px
+}
+
+/* our services */
+.btn{
+  background-color: darkslategray;
+  color: aqua;
+}
+
+.btn:hover{
+  background-color: whitesmoke;
+  color: darkslategray;
+  border-color: darkslategray;
+  font-weight: bolder;
+}
+
+

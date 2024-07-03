@@ -1,0 +1,363 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LifeWARE.com</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="./image/LOGO.PNG" type="image/x-icon">
+    <link rel="stylesheet" href="department.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('./image/patient.webp') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            /* display: flex; */
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .form-container {
+            background-color: rgba(62, 184, 189, 0.8);
+            width: 90%;
+            max-width: 600px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: auto;
+            width: 50%;
+            padding: 10px;       
+        }
+        .form-container h1 {
+            background-color: #3a9ad9;
+            color: #ffffff;
+            padding: 10px;
+            /* margin: -20px -20px 20px -20px; */
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+        .form-section {
+            margin-bottom: 20px;
+        }
+        .form-section label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .form-section input[type="text"],
+        .form-section input[type="email"],
+        .form-section input[type="date"],
+        .form-section input[type="number"],
+        .form-section input[type="tel"],
+        .form-section select,
+        .form-section textarea {
+            width: 80%;
+            padding: 10px;
+            border: 1px solid #2fa6b6;
+            border-radius: 5px;
+            margin-bottom: 10px;
+           
+        }
+        .form-section .checkbox-group,
+        .form-section .radio-group {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .form-section .checkbox-group label,
+        .form-section .radio-group label {
+            flex: 1 1 50%;
+            display: flex;
+            align-items: center;
+        }
+        .form-section .checkbox-group input,
+        .form-section .radio-group input {
+            margin-right: 10px;
+        }
+        .form-section .current-complaints,
+        .form-section .additional-notes {
+            margin-bottom: 0;
+        }
+        /* .form-footer {
+            text-align: center;
+        }
+        .form-footer a {
+            text-decoration: none;
+            color: #3a9ad9;
+        }
+        .form-footer p {
+            margin: 0;
+        } */
+        @media (max-width: 600px) {
+            .form-section .checkbox-group label,
+            .form-section .radio-group label, .form-container {
+                flex: 1 1 100%;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .form-container
+            {
+                width: auto;
+            }
+        }
+
+
+        /* header and footer */
+
+        .header {
+  /* background: url('./image/building.jpg') no-repeat center center;
+  background-size: cover;
+  color: white; */
+  padding: 150px 0;
+}
+
+/* .services {
+  background: url('./image/building.jpg') no-repeat center center;
+  background-size: cover;
+  color: white;
+  padding: 150px 0;
+} */
+
+.header h1 {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.header p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.features h3 {
+  margin-bottom: 20px;
+}
+
+/* .footer {
+  background-color: #403834;
+  color: white;
+} */
+
+.navbar{
+  background-color: darkslategray;
+}
+
+.navbar-brand .logo {
+  height: 40px;
+}
+
+.navbar-contact {
+  color: white;
+  text-align: right;
+}
+
+.navbar-contact span {
+  display: block;
+}
+
+.navbar-contact a {
+  color: white;
+  text-decoration: none;
+}
+
+.navbar-contact a:hover {
+  text-decoration: underline;
+}
+
+/* submit */
+
+.btn{
+    padding: 15px;
+    background-color: rgb(27, 132, 180);
+    color: whitesmoke;
+    font-weight: bolder;
+    display: block;
+    margin: auto;
+}
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <!-- <a class="navbar-brand" href="#"><img src="./image/LOGO.PNG" alt="Logo" class="logo"></a> -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="./index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./department.html">Departments</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Emergency</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Paediatrician</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./form.html">Form</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./dashboard.html" style="background-color: #1fafc9; padding: 10px; color: whitesmoke;">Dashboard</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="navbar-contact">
+                <span>+234 703 9713 632</span>
+                <a href="mailto:support@colorlib.com">support@lifeware.com</a>
+            </div>
+        </div>
+    </nav>
+    <header class="header">
+        <div class="container text-center">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <h1 class="head">WE ENSURE QUALITY HEALTHCARE FOR A BETTER SOCIETY</h1>
+                    <p class="lead">In the history of modern, reliable, accessible and more efficient way to <span style="color: orange; font-weight: bolder; font-size: 20px;"!important> <br> get medical care, we give selflessly </span></p>
+                    <a href="#features" class="btn btn-primary btn-lg">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#"><img src="./image/LOGO.PNG" alt="Logo" class="logo"></a>
+            <a class="navbar-brand ware" href="./index.html">Life<span class="ware">WARE</span>&copy;</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="./index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./department.html">Departments</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Emergency</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Paediatrician</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./form.html">Form</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./dashboard.html" style="background-color: #1fafc9; padding: 10px; color: whitesmoke;">Dashboard</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="form-container">
+        <h1>Medical Form</h1>
+        <form>
+            <div class="form-section">
+                <label for="full-name">Full Name</label>
+                <input type="text" id="full-name" name="full-name">
+            </div>
+            <div class="form-section">
+                <label for="date-of-birth">Date of Birth</label>
+                <input type="date" id="date-of-birth" name="date-of-birth">
+            </div>
+            <div class="form-section">
+                <label>Gender</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="gender" value="male"> Male</label>
+                    <label><input type="radio" name="gender" value="female"> Female</label>
+                </div>
+            </div>
+            <div class="form-section">
+                <label for="address">Address</label>
+                <input type="text" id="address" name="address">
+            </div>
+            <div class="form-section">
+                <label for="zip-code">Zip Code</label>
+                <input type="number" id="zip-code" name="zip-code">
+            </div>
+            <div class="form-section">
+                <label for="phone-number">Phone Number</label>
+                <input type="tel" id="phone-number" name="phone-number">
+            </div>
+            <div class="form-section">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email">
+            </div>
+            <div class="form-section">
+                <label>Medical Conditions</label>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="medical-conditions" value="hypertension"> Hypertension</label>
+                    <label><input type="checkbox" name="medical-conditions" value="diabetes"> Diabetes</label>
+                    <label><input type="checkbox" name="medical-conditions" value="heart-disease"> Heart Disease</label>
+                    <label><input type="checkbox" name="medical-conditions" value="kidney-disease"> Kidney Disease</label>
+                    <label><input type="checkbox" name="medical-conditions" value="respiratory-disorder"> Respiratory Disorder</label>
+                    <label><input type="checkbox" name="medical-conditions" value="other"> Other</label>
+                    <input type="text" name="other-medical-condition" placeholder="Specify other condition">
+                </div>
+            </div>
+            <div class="form-section">
+                <label>Surgical History</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="surgical-history" value="no"> No</label>
+                    <label><input type="radio" name="surgical-history" value="yes"> Yes</label>
+                    <input type="text" name="surgery-type" placeholder="Specify type of surgery">
+                </div>
+            </div>
+            <div class="form-section current-complaints">
+                <label for="current-complaints">Current Complaints</label>
+                <textarea id="current-complaints" name="current-complaints" rows="3"></textarea>
+            </div>
+            <div class="form-section additional-notes">
+                <label for="additional-notes">Additional Notes</label>
+                <textarea id="additional-notes" name="additional-notes" rows="3"></textarea>
+            </div>
+
+            <!-- <button><a href="" class="btn-primary" style="align-items: center;"></a>Submit</button> -->
+            <button class="btn">Submit</button>
+        </form>
+    </div>
+
+        <!-- Footer -->
+        <footer class="footer bg-dark text-white text-center py-3">
+            <div class="container">
+                <p>&copy; 2024 LifeWARE Hospital. All rights reserved.</p>
+                <h6>Designed by <span style="color: cyan;">SkyNetworks inc.&copy;</span></h6>
+            </div>
+        </footer>
+    
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="./assets/js/main.js"></script>
+    
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="scripts.js"></script>
+</body>
+</html>
+
