@@ -1,82 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LifeWARE.com</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="shortcut icon" href="./image/LOGO.PNG" type="image/x-icon">
-    <link rel="stylesheet" href="department.css">
+    <title>LifeWARE Hospital</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .carousel-item img {
+            width: 100%;
+            height: 550px;
+            object-fit: cover;
+        }
+
+        .card {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: none;
+}
+.service-card:hover{
+
+  /* background-color: rgba(75, 74, 74, 0.9); */
+  transition: background-color 0.3s ease;
+  transform: translateY(-10px);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+}
+.card-body {
+  transition: background-color 0.3s ease;
+}
+
+        .navbar {
+            background-color: #0056b3;
+        }
+
+        .navbar-brand {
+            color: #fff;
+        }
+
+        .navbar-brand img {
+            height: 50px;
+            width: auto;
+        }
+
+        .navbar-nav .nav-link {
+            color: #fff !important;
+        }
+
+        .btn-get-started {
+            background-color: #0056b3;
+            color: #fff;
+            font-size: 20px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+        }
+
+        .btn-get-started:hover {
+            background-color: #004494;
+        }
+
+        .section {
+            padding: 60px 0;
+        }
+
+        .ware{
+          color: #1fafc9;
+          font-size: 30px;
+          font-weight:bolder;
+        }
+
+        .life{
+          color: whitesmoke;
+          font-size: 30px;
+          font-weight: bolder;
+        }
+
+         /* Go up arrow */
+
+         #goUp {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: none;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            padding: 10px;
+            z-index: 1000;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        #goUp:hover {
+            background-color: #0056b3;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+    </style>
 </head>
+
 <body>
-    <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="./index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./department.html">Departments</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Emergency</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Paediatrician</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./form.html">Form</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./dashboard.html" style="background-color: #1fafc9; padding: 10px; color: whitesmoke;">Dashboard</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="navbar-contact">
-                <span>+234 703 9713 632</span>
-                <a href="mailto:support@colorlib.com">support@lifeware.com</a>
-            </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="./index.html">
+            <img src="./image/LOGO.PNG" alt="LifeWARE Logo"> <span class="life">Life</span><span class="ware">WARE</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./services.html">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./contact.html">Contact</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./form.html">Form</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./dashboard.html">Dashboard</a>
+              </li>
+            </ul>
         </div>
-    </nav> -->
+    </nav>
+
+    <!-- Carousel -->
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="./image/building2.webp" height="710" class="d-block w-100" alt="First slide">                
+                <img src="./image/building.jpg" alt="Slide 1">
                 <div class="carousel-caption d-none d-md-block">
-                    <h3>Welcome to Our Hospital</h3>
-                    <p>Providing exceptional healthcare services.</p>
-
-                    <a href="#features" class="btn btn-primary btn-lg">Get Started</a>
-
+                    <h5>Welcome to LifeWARE</h5>
+                    <p>Your health, our priority.</p>
+                    <a href="#contact" class="btn-get-started">Get Started</a>
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="./image/critical.jpg" height="710" class="d-block w-100" alt="Second slide">
+                <img src="./image/building2.webp" alt="Slide 2">
                 <div class="carousel-caption d-none d-md-block">
-                    <h3>State-of-the-art Facilities</h3>
-                    <p>Equipped with modern medical technology.</p>
+                    <h5>Expert Care</h5>
+                    <p>Providing quality health services.</p>
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="./image/emergency.jpg" height="710" class="d-block w-100" alt="Third slide">
+                <img src="./image/critical.jpg" alt="Slide 3">
                 <div class="carousel-caption d-none d-md-block">
-                    <h3>Compassionate Care</h3>
-                    <p>Our team is dedicated to your well-being.</p>
+                    <h5>State-of-the-art Facilities</h5>
+                    <p>Modern equipment for modern care.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="./image/emergency.jpg" alt="Slide 4">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Compassionate Team</h5>
+                    <p>Our team is here for you.</p>
                 </div>
             </div>
         </div>
@@ -90,187 +185,50 @@
         </a>
     </div>
 
-    <div class="container mt-2">
-        <div class="row">
-            <div class="col-md-3 mb-4">
-                <div class="card docs">
-                    <img src="./assets/images/doctor6.jpg " class="card-img-top" alt="Card image 1">
-                    <div class="card-body">
-                        <h5 class="card-title">Cardiology</h5>
-                        <p class="card-text">Our cardiology department provides the best care for heart patients.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 mb-4">
-                <div class="card docs">
-                    <img src="./assets/images/doctor5.jpg" class="card-img-top" alt="Card image 2">
-                    <div class="card-body">
-                        <h5 class="card-title">Neurology</h5>
-                        <p class="card-text">We offer advanced neurological treatments and care.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 mb-4">
-                <div class="card docs">
-                    <img src="./assets/images/doctor4.jpg" class="card-img-top" alt="Card image 3">
-                    <div class="card-body">
-                        <h5 class="card-title">Pediatrics</h5>
-                        <p class="card-text">Dedicated to the health and well-being of children.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 mb-4">
-                <div class="card docs">
-                    <img src="./assets/images/doctor7.jpg" class="card-img-top" alt="Card image 4">
-                    <div class="card-body">
-                        <h5 class="card-title">Orthopedics</h5>
-                        <p class="card-text">Comprehensive orthopedic care for all ages.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-
-
-
-    <header class="header">
-        <div class="container text-center">
-            <div class="row justify-content-center">
-                <div class="col-md-8">
-                    <h1 class="head">WE ENSURE QUALITY HEALTHCARE FOR A BETTER SOCIETY</h1>
-                    <p class="lead">In the history of modern, reliable, accessible and more efficient way to <span style="color: orange; font-weight: bolder; font-size: 20px;"!important> <br> get medical care, we give selflessly </span></p>
-                    
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <section class="services py-5" id="features">
-        <h3 class="line">OUR PROFESSIONAL HANDS</h3>
-        <div class="container">         
+    <!-- About Us Section -->
+    <section id="about" class="section bg-light">
+        <div class="container">
             <div class="row">
-                <div class="col-md-4 mb-4">
-                    <div class="card h-70 service-card">
-                        <img src="./assets/images/doctor2.jpg" class="card-img-top" alt="Service 1">
-                        <div class="card-body">
-                            <h3>Emergency Medicine</h3>
-                    <p>As one of our mandates as a critical care center, we provide the highest level of trauma and emergency care in 
-                        our fully equipped emergency room. Our team are trained and retrained on modern techniques in the 
-                        management of medical, surgical and obstetric emergencies.</p>
-                    <a href="#" class="btn btn-outline-primary">Join Now</a>
-                        </div>
-                    </div>
+                <div class="col-md-6">
+                    <h2>About Us</h2>
+                    <p>LifeWARE Hospital is dedicated to providing the best healthcare services. Our state-of-the-art facilities and compassionate staff ensure the highest level of care for all our patients.</p>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card h-70 service-card">
-                        <img src="./assets/images/doctor6.jpg" class="card-img-top" alt="Service 2">
-                        <div class="card-body">
-                            <h3>Critical care medicine/ICU</h3>
-                    <p>Intensive care medicine or critical care medicine is a branch of medicine concerned with the diagnosis and management 
-                        of life-threatening conditions that may require sophisticated life support equipment and monitoring. this is one of our 
-                        core specialties and we have over 25 years of experience in it.</p>
-                    <a href="#" class="btn btn-outline-primary">Join Now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card h-70 service-card">
-                        <img src="./assets/images/doctor5.jpg" class="card-img-top" alt="Service 3">
-                        <div class="card-body">
-                            <h3>SURGERY/DIAGNOSIS</h3>
-                            <p>At LifeWare, we have two fully equipped theatres and trained theatre practitioners, 
-                                technicians, nurses, surgeons and anaesthetists who ensure that cases are done safely and efficiently. 
-                                Our modern laboratory is equipped to carry out hematological, biochemical and immunological investigations.</p>
-                            <a href="#" class="btn btn-outline-primary">Join Now</a>
-                        </div>
-                    </div>
+                <div class="col-md-6">
+                    <img src="./images/doctor1.jpg" alt="About Us" class="img-fluid">
                 </div>
             </div>
         </div>
     </section>
- 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="#"><img src="./image/LOGO.PNG" alt="Logo" class="logo"></a>
-            <a class="navbar-brand ware" href="./index.html">Life<span class="ware">WARE</span>&copy;</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="./index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./department.html">Departments</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Emergency</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Paediatrician</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./form.html">Form</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./dashboard.html" style="background-color: #1fafc9; padding: 10px; color: whitesmoke;">Dashboard</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <header class="hero bg-primary text-white text-center py-5">
-        <div class="container">
-            <h1 class="display-4">Welcome to Our Hospital</h1>
-            <p class="lead">Providing the best healthcare services to ensure your well-being.</p>
-            <a href="#services" class="btn btn-light btn-lg">Our Services</a>
-        </div>
-    </header>
 
     <!-- Services Section -->
-    <section class="services our-services py-5" id="services">
+    <section id="services" class="section">
         <div class="container">
-            <h2 class="text-center mb-4" style="font-weight: bolder; color: #343a40; margin-bottom: 30px;">Our Services</h2>
+            <h2 style="text-align: center; margin-bottom: 20px;">Our Services</h2>
             <div class="row">
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100 service-card">
-                        <img src="./assets/images/doctor1.jpg" class="card-img-top" alt="Service 1">
+                <div class="col-md-4">
+                    <div class="card service-card">
+                        <img src="./images/doctor2.jpg" class="card-img-top" alt="Service 1">
                         <div class="card-body">
-                            <h5 class="card-title">Cardiology</h5>
-                            <p class="card-text">Comprehensive heart care services.</p>
-                            <a href="#" class="btn">Learn More</a>
+                            <h5 class="card-title">Emergency Care</h5>
+                            <p class="card-text">24/7 emergency services to handle any urgent medical needs.</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100 service-card">
-                        <img src="./assets/images/doctor7.jpg" class="card-img-top" alt="Service 2">
+                <div class="col-md-4">
+                    <div class="card service-card">
+                        <img src="./images/doctor3.jpg" class="card-img-top" alt="Service 2">
                         <div class="card-body">
-                            <h5 class="card-title">Neurology</h5>
-                            <p class="card-text">Advanced neurological treatments.</p>
-                            <a href="#" class="btn align-items-center ">Learn More</a>
+                            <h5 class="card-title">General Medicine</h5>
+                            <p class="card-text">Comprehensive general medicine services for your everyday health.</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100 service-card">
-                        <img src="./assets/images/doctor3.jpg" class="card-img-top" alt="Service 3">
+                <div class="col-md-4">
+                    <div class="card service-card">
+                        <img src="./images/doctor4.jpg" class="card-img-top" alt="Service 3">
                         <div class="card-body">
-                            <h5 class="card-title">Pediatrics</h5>
-                            <p class="card-text">Specialized care for children.</p>
-                            <a href="#" class="btn">Learn More</a>
+                            <h5 class="card-title">Specialist Care</h5>
+                            <p class="card-text">Expert consultations and treatments from our specialized doctors.</p>
                         </div>
                     </div>
                 </div>
@@ -279,55 +237,140 @@
     </section>
 
     <!-- Contact Section -->
-    <section class="contact bg-light py-5" id="contact">
+    <section id="contact" class="section bg-light">
         <div class="container">
-            <h2 class="text-center mb-4">Contact Us</h2>
-            <div class="row">
-                <div class="col-md-6">
-                    <form>
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" class="form-control" id="name" placeholder="Your Name">
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" class="form-control" id="email" placeholder="Your Email">
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea class="form-control" id="message" rows="5" placeholder="Your Message"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
-                    </form>
+            <h2>Contact Us</h2>
+            <form>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" placeholder="Your Name">
                 </div>
-                <div class="col-md-6">
-                    <h4>Address</h4>
-                    <p>123 Healthcare St, Ago Palaceway, Lagos State, 12340</p>
-                    <h4>Phone</h4>
-                    <p>+(234) 703-9713-632</p>
-                    <h4>Email</h4>
-                    <p>support@lifeware.com</p>
+                <div class="form-group">
+                    <label for="email">Email address</label>
+                    <input type="email" class="form-control" id="email" placeholder="Your Email">
                 </div>
-            </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea class="form-control" id="message" rows="4" placeholder="Your Message"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer bg-dark text-white text-center py-3">
-        <div class="container">
+    <footer class="bg-dark text-white pt-2 pb-2">
+      <div class="container">
+
+                  <!-- Newsletter Signup -->
+                  <div class="row mb-2 pt-2">
+                    <div class="col-md-12">
+                        <h5>Subscribe to Our Newsletter</h5>
+                        <form action="#" method="post" class="form-inline">
+                            <div class="form-group mx-sm-3 mb-2 flex-fill">
+                                <input type="email" class="form-control w-100" id="email" placeholder="Enter your email">
+                            </div>
+                            <button type="submit" class="btn btn-primary mb-2">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+
+          <div class="row">
+              <!-- Contact Information -->
+              <div class="col-md-4 mb-2">
+                  <h5>Contact Us</h5>
+                  <ul class="list-unstyled">
+                      <li><i class="fas fa-map-marker-alt"></i>1/5 Mike Maduabuchi Street Ago Palaceway, Lagos.</li>
+                      <li><i class="fas fa-phone"></i> +234 (70) 397-13632</li>
+                      <li><i class="fas fa-envelope"></i> <a href="mailto:info@lifewarehospital.com" class="text-white">info@lifewarehospital.com</a></li>
+                  </ul>
+              </div>
+  
+              <!-- Quick Links -->
+              <div class="col-md-4 mb-2">
+                  <h5>Quick Links</h5>
+                  <ul class="list-unstyled">
+                      <li><a href="#home" class="text-white">Home</a></li>
+                      <li><a href="#about" class="text-white">About Us</a></li>
+                      <li><a href="#services" class="text-white">Services</a></li>
+                      <li><a href="#contact" class="text-white">Contact</a></li>
+                      <li><a href="#careers" class="text-white">Careers</a></li>
+                  </ul>
+              </div>
+  
+              <!-- Services -->
+              <div class="col-md-4 mb-2">
+                  <h5>Our Services</h5>
+                  <ul class="list-unstyled">
+                      <li><a href="#" class="text-white">Emergency Care</a></li>
+                      <li><a href="#" class="text-white">General Medicine</a></li>
+                      <li><a href="#" class="text-white">Specialist Care</a></li>
+                      <li><a href="#" class="text-white">Pediatrics</a></li>
+                      <li><a href="#" class="text-white">Surgery</a></li>
+                  </ul>
+              </div>
+          </div>
+  
+          <!-- Social Media Links -->
+          <div class="row mb-2">
+              <div class="col text-center">
+                  <h5>Follow Us</h5>
+                  <a href="https://facebook.com" class="text-white mx-2" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                  <a href="https://twitter.com" class="text-white mx-2" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                  <a href="https://instagram.com" class="text-white mx-2" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                  <a href="https://linkedin.com" class="text-white mx-2" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                  <a href="https://youtube.com" class="text-white mx-2" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+              </div>
+          </div>
+  
+          <!-- Copyright -->
+          <div class="row">
+              <div class="col text-center">
+                  <p>&copy; 2024 LifeWARE Hospital. All rights reserved.</p>
+              </div>
+          </div>
+      </div>
+
+      <!-- Copyright -->
+      <div class="row">
+        <div class="col text-center">
             <p>&copy; 2024 LifeWARE Hospital. All rights reserved.</p>
-            <h6>Designed by <span style="color: cyan;">SkyNetworks inc.&copy;</span></h6>
         </div>
-    </footer>
+    </div>
+</div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="./assets/js/main.js"></script>
+<button id="goUp" onclick="scrollToTop()">
+  <i class="fas fa-arrow-up"></i>
+</button>
 
+<script>
+  // Show the button when the user scrolls down 100px from the top of the document
+  window.onscroll = function() {
+      let goUpButton = document.getElementById("goUp");
+      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+          goUpButton.style.display = "block";
+      } else {
+          goUpButton.style.display = "none";
+      }
+  };
+
+  // Function to scroll to the top of the document
+  function scrollToTop() {
+      document.body.scrollTop = 0; // For Safari
+      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+  }
+</script>
+  </footer>
+  
+  
+  <!-- FontAwesome CDN -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  
+
+    <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="scripts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
+
 </html>

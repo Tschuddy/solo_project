@@ -1,363 +1,499 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LifeWARE.com</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="shortcut icon" href="./image/LOGO.PNG" type="image/x-icon">
-    <link rel="stylesheet" href="department.css">
+    <title>LifeWARE Hospital - Forms</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: url('./image/patient.webp') no-repeat center center fixed;
-            background-size: cover;
-            margin: 0;
-            padding: 0;
-            /* display: flex; */
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
+        .carousel-item img {
+            width: 100%;
+            height: 550px;
+            object-fit: cover;
         }
-        .form-container {
-            background-color: rgba(62, 184, 189, 0.8);
-            width: 90%;
-            max-width: 600px;
-            border: 1px solid #ddd;
+
+        .navbar {
+            background-color: #0056b3;
+        }
+
+        .navbar-brand {
+            color: #fff;
+        }
+
+        .navbar-brand img {
+            height: 50px;
+            width: auto;
+        }
+
+        .navbar-nav .nav-link {
+            color: #fff !important;
+        }
+
+        .btn-get-started {
+            background-color: #0056b3;
+            color: #fff;
+            font-size: 20px;
+            padding: 10px 20px;
             border-radius: 5px;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            margin: auto;
-            width: 50%;
-            padding: 10px;       
+            border: none;
         }
-        .form-container h1 {
-            background-color: #3a9ad9;
-            color: #ffffff;
+
+        .btn-get-started:hover {
+            background-color: #004494;
+        }
+
+        .content {
+            position: relative;
+            z-index: 2;
+            color: #fff;
+        }
+
+        .forms-container {
+            padding: 60px 0;
+        }
+
+        .card-header {
+            background-color: #0056b3;
+            color: #fff;
+        }
+
+        .card-body {
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+
+        .carousel-inner,
+        .carousel-item {
+            height: 100vh;
+        }
+
+        .ware{
+          color: #1fafc9;
+          font-size: 30px;
+          font-weight:bolder;
+        }
+
+        .life{
+          color: whitesmoke;
+          font-size: 30px;
+          font-weight: bolder;
+        }
+
+         /* Go up arrow */
+
+         #goUp {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: none;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 50%;
             padding: 10px;
-            /* margin: -20px -20px 20px -20px; */
-            border-top-left-radius: 5px;
-            border-top-right-radius: 5px;
-        }
-        .form-section {
-            margin-bottom: 20px;
-        }
-        .form-section label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-        .form-section input[type="text"],
-        .form-section input[type="email"],
-        .form-section input[type="date"],
-        .form-section input[type="number"],
-        .form-section input[type="tel"],
-        .form-section select,
-        .form-section textarea {
-            width: 80%;
-            padding: 10px;
-            border: 1px solid #2fa6b6;
-            border-radius: 5px;
-            margin-bottom: 10px;
-           
-        }
-        .form-section .checkbox-group,
-        .form-section .radio-group {
-            display: flex;
-            flex-wrap: wrap;
-        }
-        .form-section .checkbox-group label,
-        .form-section .radio-group label {
-            flex: 1 1 50%;
-            display: flex;
-            align-items: center;
-        }
-        .form-section .checkbox-group input,
-        .form-section .radio-group input {
-            margin-right: 10px;
-        }
-        .form-section .current-complaints,
-        .form-section .additional-notes {
-            margin-bottom: 0;
-        }
-        /* .form-footer {
-            text-align: center;
-        }
-        .form-footer a {
-            text-decoration: none;
-            color: #3a9ad9;
-        }
-        .form-footer p {
-            margin: 0;
-        } */
-        @media (max-width: 600px) {
-            .form-section .checkbox-group label,
-            .form-section .radio-group label, .form-container {
-                flex: 1 1 100%;
-            }
+            z-index: 1000;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
         }
 
-        @media (max-width: 767px) {
-            .form-container
-            {
-                width: auto;
-            }
+        #goUp:hover {
+            background-color: #0056b3;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
 
-        /* header and footer */
-
-        .header {
-  /* background: url('./image/building.jpg') no-repeat center center;
-  background-size: cover;
-  color: white; */
-  padding: 150px 0;
-}
-
-/* .services {
-  background: url('./image/building.jpg') no-repeat center center;
-  background-size: cover;
-  color: white;
-  padding: 150px 0;
-} */
-
-.header h1 {
-  font-size: 3rem;
-  font-weight: bold;
-}
-
-.header p {
-  font-size: 1.2rem;
-  margin-bottom: 20px;
-}
-
-.features h3 {
-  margin-bottom: 20px;
-}
-
-/* .footer {
-  background-color: #403834;
-  color: white;
-} */
-
-.navbar{
-  background-color: darkslategray;
-}
-
-.navbar-brand .logo {
-  height: 40px;
-}
-
-.navbar-contact {
-  color: white;
-  text-align: right;
-}
-
-.navbar-contact span {
-  display: block;
-}
-
-.navbar-contact a {
-  color: white;
-  text-decoration: none;
-}
-
-.navbar-contact a:hover {
-  text-decoration: underline;
-}
-
-/* submit */
-
-.btn{
-    padding: 15px;
-    background-color: rgb(27, 132, 180);
-    color: whitesmoke;
-    font-weight: bolder;
-    display: block;
-    margin: auto;
-}
     </style>
 </head>
+
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <!-- <a class="navbar-brand" href="#"><img src="./image/LOGO.PNG" alt="Logo" class="logo"></a> -->
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="./index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./department.html">Departments</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Emergency</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Paediatrician</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./form.html">Form</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./dashboard.html" style="background-color: #1fafc9; padding: 10px; color: whitesmoke;">Dashboard</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="navbar-contact">
-                <span>+234 703 9713 632</span>
-                <a href="mailto:support@colorlib.com">support@lifeware.com</a>
-            </div>
-        </div>
-    </nav>
-    <header class="header">
-        <div class="container text-center">
-            <div class="row justify-content-center">
-                <div class="col-md-8">
-                    <h1 class="head">WE ENSURE QUALITY HEALTHCARE FOR A BETTER SOCIETY</h1>
-                    <p class="lead">In the history of modern, reliable, accessible and more efficient way to <span style="color: orange; font-weight: bolder; font-size: 20px;"!important> <br> get medical care, we give selflessly </span></p>
-                    <a href="#features" class="btn btn-primary btn-lg">Get Started</a>
+     <!-- Navbar -->
+     <nav class="navbar navbar-expand-lg navbar-dark">
+      <a class="navbar-brand" href="./index.html">
+          <img src="./image/LOGO.PNG" alt="LifeWARE Logo"> <span class="life">Life</span><span class="ware">WARE</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+              <li class="nav-item active">
+                  <a class="nav-link" href="./index.html">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#about">About Us</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="./services.html">Services</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="./contact.html">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./form.html">Form</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./dashboard.html">Dashboard</a>
+            </li>
+          </ul>
+      </div>
+  </nav>
+
+  <!-- Carousel -->
+  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+      </ol>
+      <div class="carousel-inner">
+          <div class="carousel-item active">
+              <img src="./image/building.jpg" alt="Slide 1">
+              <div class="carousel-caption d-none d-md-block">
+                  <h5>Welcome to LifeWARE</h5>
+                  <p>Your health, our priority.</p>
+                  <a href="#contact" class="btn-get-started">Get Started</a>
+              </div>
+          </div>
+          <div class="carousel-item">
+              <img src="./image/building2.webp" alt="Slide 2">
+              <div class="carousel-caption d-none d-md-block">
+                  <h5>Expert Care</h5>
+                  <p>Providing quality health services.</p>
+              </div>
+          </div>
+          <div class="carousel-item">
+              <img src="./image/critical.jpg" alt="Slide 3">
+              <div class="carousel-caption d-none d-md-block">
+                  <h5>State-of-the-art Facilities</h5>
+                  <p>Modern equipment for modern care.</p>
+              </div>
+          </div>
+          <div class="carousel-item">
+              <img src="./image/emergency.jpg" alt="Slide 4">
+              <div class="carousel-caption d-none d-md-block">
+                  <h5>Compassionate Team</h5>
+                  <p>Our team is here for you.</p>
+              </div>
+          </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+      </a>
+  </div>
+
+    <!-- Overlay -->
+    <div class="overlay"></div>
+
+    <!-- Content -->
+    <div class="content">
+        <div class="container text-center forms-container">
+            <h1 class="mb-5">Pick a Form To Fill</h1>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5>Emergency Care Form</h5>
+                        </div>
+                        <div class="card-body">
+                            <form>
+                                <div class="form-group">
+                                    <label for="ecName">Full Name</label>
+                                    <input type="text" class="form-control" id="ecName" placeholder="Enter your name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="ecDob">Date of Birth</label>
+                                    <input type="date" class="form-control" id="ecDob">
+                                </div>
+                                <div class="form-group">
+                                    <label for="ecAddress">Address</label>
+                                    <input type="text" class="form-control" id="ecAddress" placeholder="Enter your address">
+                                </div>
+                                <div class="form-group">
+                                    <label for="ecContact">Contact Number</label>
+                                    <input type="text" class="form-control" id="ecContact" placeholder="Enter your contact number">
+                                </div>
+                                <div class="form-group">
+                                    <label for="ecInsurance">Insurance Provider</label>
+                                    <input type="text" class="form-control" id="ecInsurance" placeholder="Enter your insurance provider">
+                                </div>
+                                <div class="form-group">
+                                    <label for="ecSymptoms">Symptoms</label>
+                                    <textarea class="form-control" id="ecSymptoms" rows="3" placeholder="Describe your symptoms"></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5>General Medicine Form</h5>
+                        </div>
+                        <div class="card-body">
+                            <form>
+                                <div class="form-group">
+                                    <label for="gmName">Full Name</label>
+                                    <input type="text" class="form-control" id="gmName" placeholder="Enter your name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="gmDob">Date of Birth</label>
+                                    <input type="date" class="form-control" id="gmDob">
+                                </div>
+                                <div class="form-group">
+                                    <label for="gmAddress">Address</label>
+                                    <input type="text" class="form-control" id="gmAddress" placeholder="Enter your address">
+                                </div>
+                                <div class="form-group">
+                                    <label for="gmContact">Contact Number</label>
+                                    <input type="text" class="form-control" id="gmContact" placeholder="Enter your contact number">
+                                </div>
+                                <div class="form-group">
+                                    <label for="gmInsurance">Insurance Provider</label>
+                                    <input type="text" class="form-control" id="gmInsurance" placeholder="Enter your insurance provider">
+                                </div>
+                                <div class="form-group">
+                                    <label for="gmReason">Reason for Visit</label>
+                                    <textarea class="form-control" id="gmReason" rows="3" placeholder="Describe the reason for your visit"></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5>Cardiology Form</h5>
+                        </div>
+                        <div class="card-body">
+                            <form>
+                                <div class="form-group">
+                                    <label for="cardioName">Full Name</label>
+                                    <input type="text" class="form-control" id="cardioName" placeholder="Enter your name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="cardioDob">Date of Birth</label>
+                                    <input type="date" class="form-control" id="cardioDob">
+                                </div>
+                                <div class="form-group">
+                                    <label for="cardioAddress">Address</label>
+                                    <input type="text" class="form-control" id="cardioAddress" placeholder="Enter your address">
+                                </div>
+                                <div class="form-group">
+                                    <label for="cardioContact">Contact Number</label>
+                                    <input type="text" class="form-control" id="cardioContact" placeholder="Enter your contact number">
+                                </div>
+                                <div class="form-group">
+                                    <label for="cardioInsurance">Insurance Provider</label>
+                                    <input type="text" class="form-control" id="cardioInsurance" placeholder="Enter your insurance provider">
+                                </div>
+                                <div class="form-group">
+                                    <label for="cardioSymptoms">Symptoms</label>
+                                    <textarea class="form-control" id="cardioSymptoms" rows="3" placeholder="Describe your symptoms"></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5>Pediatrics Form</h5>
+                        </div>
+                        <div class="card-body">
+                            <form>
+                                <div class="form-group">
+                                    <label for="pedName">Child's Full Name</label>
+                                    <input type="text" class="form-control" id="pedName" placeholder="Enter your child's name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="pedDob">Date of Birth</label>
+                                    <input type="date" class="form-control" id="pedDob">
+                                </div>
+                                <div class="form-group">
+                                    <label for="pedAddress">Address</label>
+                                    <input type="text" class="form-control" id="pedAddress" placeholder="Enter your address">
+                                </div>
+                                <div class="form-group">
+                                    <label for="pedContact">Contact Number</label>
+                                    <input type="text" class="form-control" id="pedContact" placeholder="Enter your contact number">
+                                </div>
+                                <div class="form-group">
+                                    <label for="pedInsurance">Insurance Provider</label>
+                                    <input type="text" class="form-control" id="pedInsurance" placeholder="Enter your insurance provider">
+                                </div>
+                                <div class="form-group">
+                                    <label for="pedSymptoms">Symptoms</label>
+                                    <textarea class="form-control" id="pedSymptoms" rows="3" placeholder="Describe your child's symptoms"></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5>Surgery Form</h5>
+                        </div>
+                        <div class="card-body">
+                            <form>
+                                <div class="form-group">
+                                    <label for="surgeryName">Full Name</label>
+                                    <input type="text" class="form-control" id="surgeryName" placeholder="Enter your name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="surgeryDob">Date of Birth</label>
+                                    <input type="date" class="form-control" id="surgeryDob">
+                                </div>
+                                <div class="form-group">
+                                    <label for="surgeryAddress">Address</label>
+                                    <input type="text" class="form-control" id="surgeryAddress" placeholder="Enter your address">
+                                </div>
+                                <div class="form-group">
+                                    <label for="surgeryContact">Contact Number</label>
+                                    <input type="text" class="form-control" id="surgeryContact" placeholder="Enter your contact number">
+                                </div>
+                                <div class="form-group">
+                                    <label for="surgeryInsurance">Insurance Provider</label>
+                                    <input type="text" class="form-control" id="surgeryInsurance" placeholder="Enter your insurance provider">
+                                </div>
+                                <div class="form-group">
+                                    <label for="surgerySymptoms">Symptoms</label>
+                                    <textarea class="form-control" id="surgerySymptoms" rows="3" placeholder="Describe your symptoms"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="surgeryHistory">Surgery History</label>
+                                    <textarea class="form-control" id="surgeryHistory" rows="3" placeholder="Describe any previous surgeries"></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </header>
-
-
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="#"><img src="./image/LOGO.PNG" alt="Logo" class="logo"></a>
-            <a class="navbar-brand ware" href="./index.html">Life<span class="ware">WARE</span>&copy;</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="./index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./department.html">Departments</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Emergency</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Paediatrician</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./form.html">Form</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./dashboard.html" style="background-color: #1fafc9; padding: 10px; color: whitesmoke;">Dashboard</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-
-    <div class="form-container">
-        <h1>Medical Form</h1>
-        <form>
-            <div class="form-section">
-                <label for="full-name">Full Name</label>
-                <input type="text" id="full-name" name="full-name">
-            </div>
-            <div class="form-section">
-                <label for="date-of-birth">Date of Birth</label>
-                <input type="date" id="date-of-birth" name="date-of-birth">
-            </div>
-            <div class="form-section">
-                <label>Gender</label>
-                <div class="radio-group">
-                    <label><input type="radio" name="gender" value="male"> Male</label>
-                    <label><input type="radio" name="gender" value="female"> Female</label>
-                </div>
-            </div>
-            <div class="form-section">
-                <label for="address">Address</label>
-                <input type="text" id="address" name="address">
-            </div>
-            <div class="form-section">
-                <label for="zip-code">Zip Code</label>
-                <input type="number" id="zip-code" name="zip-code">
-            </div>
-            <div class="form-section">
-                <label for="phone-number">Phone Number</label>
-                <input type="tel" id="phone-number" name="phone-number">
-            </div>
-            <div class="form-section">
-                <label for="email">E-mail</label>
-                <input type="email" id="email" name="email">
-            </div>
-            <div class="form-section">
-                <label>Medical Conditions</label>
-                <div class="checkbox-group">
-                    <label><input type="checkbox" name="medical-conditions" value="hypertension"> Hypertension</label>
-                    <label><input type="checkbox" name="medical-conditions" value="diabetes"> Diabetes</label>
-                    <label><input type="checkbox" name="medical-conditions" value="heart-disease"> Heart Disease</label>
-                    <label><input type="checkbox" name="medical-conditions" value="kidney-disease"> Kidney Disease</label>
-                    <label><input type="checkbox" name="medical-conditions" value="respiratory-disorder"> Respiratory Disorder</label>
-                    <label><input type="checkbox" name="medical-conditions" value="other"> Other</label>
-                    <input type="text" name="other-medical-condition" placeholder="Specify other condition">
-                </div>
-            </div>
-            <div class="form-section">
-                <label>Surgical History</label>
-                <div class="radio-group">
-                    <label><input type="radio" name="surgical-history" value="no"> No</label>
-                    <label><input type="radio" name="surgical-history" value="yes"> Yes</label>
-                    <input type="text" name="surgery-type" placeholder="Specify type of surgery">
-                </div>
-            </div>
-            <div class="form-section current-complaints">
-                <label for="current-complaints">Current Complaints</label>
-                <textarea id="current-complaints" name="current-complaints" rows="3"></textarea>
-            </div>
-            <div class="form-section additional-notes">
-                <label for="additional-notes">Additional Notes</label>
-                <textarea id="additional-notes" name="additional-notes" rows="3"></textarea>
-            </div>
-
-            <!-- <button><a href="" class="btn-primary" style="align-items: center;"></a>Submit</button> -->
-            <button class="btn">Submit</button>
-        </form>
     </div>
 
-        <!-- Footer -->
-        <footer class="footer bg-dark text-white text-center py-3">
-            <div class="container">
-                <p>&copy; 2024 LifeWARE Hospital. All rights reserved.</p>
-                <h6>Designed by <span style="color: cyan;">SkyNetworks inc.&copy;</span></h6>
-            </div>
-        </footer>
-    
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-        <script src="./assets/js/main.js"></script>
-    
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-        <script src="scripts.js"></script>
-</body>
-</html>
+    <!-- Footer -->
+    <footer class="bg-dark text-white pt-2 pb-2">
+      <div class="container">
 
+                  <!-- Newsletter Signup -->
+                  <div class="row mb-2 pt-2">
+                    <div class="col-md-12">
+                        <h5>Subscribe to Our Newsletter</h5>
+                        <form action="#" method="post" class="form-inline">
+                            <div class="form-group mx-sm-3 mb-2 flex-fill">
+                                <input type="email" class="form-control w-100" id="email" placeholder="Enter your email">
+                            </div>
+                            <button type="submit" class="btn btn-primary mb-2">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+
+          <div class="row">
+              <!-- Contact Information -->
+              <div class="col-md-4 mb-2">
+                  <h5>Contact Us</h5>
+                  <ul class="list-unstyled">
+                      <li><i class="fas fa-map-marker-alt"></i>1/5 Mike Maduabuchi Street Ago Palaceway, Lagos.</li>
+                      <li><i class="fas fa-phone"></i> +234 (70) 397-13632</li>
+                      <li><i class="fas fa-envelope"></i> <a href="mailto:info@lifewarehospital.com" class="text-white">info@lifewarehospital.com</a></li>
+                  </ul>
+              </div>
+  
+              <!-- Quick Links -->
+              <div class="col-md-4 mb-2">
+                  <h5>Quick Links</h5>
+                  <ul class="list-unstyled">
+                      <li><a href="#home" class="text-white">Home</a></li>
+                      <li><a href="#about" class="text-white">About Us</a></li>
+                      <li><a href="#services" class="text-white">Services</a></li>
+                      <li><a href="#contact" class="text-white">Contact</a></li>
+                      <li><a href="#careers" class="text-white">Careers</a></li>
+                  </ul>
+              </div>
+  
+              <!-- Services -->
+              <div class="col-md-4 mb-2">
+                  <h5>Our Services</h5>
+                  <ul class="list-unstyled">
+                      <li><a href="#" class="text-white">Emergency Care</a></li>
+                      <li><a href="#" class="text-white">General Medicine</a></li>
+                      <li><a href="#" class="text-white">Specialist Care</a></li>
+                      <li><a href="#" class="text-white">Pediatrics</a></li>
+                      <li><a href="#" class="text-white">Surgery</a></li>
+                  </ul>
+              </div>
+          </div>
+  
+          <!-- Social Media Links -->
+          <div class="row mb-2">
+              <div class="col text-center">
+                  <h5>Follow Us</h5>
+                  <a href="https://facebook.com" class="text-white mx-2" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                  <a href="https://twitter.com" class="text-white mx-2" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                  <a href="https://instagram.com" class="text-white mx-2" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                  <a href="https://linkedin.com" class="text-white mx-2" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                  <a href="https://youtube.com" class="text-white mx-2" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+              </div>
+          </div>
+  
+          <!-- Copyright -->
+          <div class="row">
+              <div class="col text-center">
+                  <p>&copy; 2024 LifeWARE Hospital. All rights reserved.</p>
+              </div>
+          </div>
+      </div>
+
+      <!-- Copyright -->
+      <div class="row">
+        <div class="col text-center">
+            <p>&copy; 2024 LifeWARE Hospital. All rights reserved.</p>
+        </div>
+    </div>
+</div>
+
+<button id="goUp" onclick="scrollToTop()">
+  <i class="fas fa-arrow-up"></i>
+</button>
+
+<script>
+  // Show the button when the user scrolls down 100px from the top of the document
+  window.onscroll = function() {
+      let goUpButton = document.getElementById("goUp");
+      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+          goUpButton.style.display = "block";
+      } else {
+          goUpButton.style.display = "none";
+      }
+  };
+
+  // Function to scroll to the top of the document
+  function scrollToTop() {
+      document.body.scrollTop = 0; // For Safari
+      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+  }
+</script>
+  </footer>
+
+    <!-- Bootstrap and jQuery JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
