@@ -7,134 +7,397 @@
     <title>LifeWARE Hospital</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    
+    
     <style>
-        .carousel-item img {
-            width: 100%;
-            height: 550px;
-            object-fit: cover;
-        }
-
-        .card {
-  background-color: rgba(255, 255, 255, 0.8);
-  border: none;
+body{
+    background-color: #043535;
 }
-.service-card:hover{
 
-  /* background-color: rgba(75, 74, 74, 0.9); */
-  transition: background-color 0.3s ease;
-  transform: translateY(-10px);
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+/* Carousel item image */
+.carousel-item img {
+    width: 100%;
+    height: 550px;
+    object-fit: cover;
 }
+
+.carousel-caption{
+    padding: 30px;
+    width: 50%;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-width: 10px;
+    border-radius: 30px;
+}
+
+/* Card */
+.card {
+    background-color: rgb(22, 121, 121);
+    border: none;
+    color: whitesmoke;
+}
+
+.service-card:hover {
+    transition: background-color 0.3s ease;
+    transform: translateY(-10px);
+    box-shadow: 0 0 25px rgb(138, 240, 240);
+}
+
 .card-body {
-  transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease;
 }
 
-        .navbar {
-            background-color: #0056b3;
-        }
+/* Navbar */
+.navbar {
+    background-color: rgb(20, 77, 77);
+    transition: rgb(95, 186, 214) 0.3s ease;
+}
 
-        .navbar-brand {
-            color: #fff;
-        }
+.navbar-sticky {
+    background-color: #0056b3;
+}
 
-        .navbar-brand img {
-            height: 50px;
-            width: auto;
-        }
+.navbar-brand {
+    color: #fff;
+}
 
-        .navbar-nav .nav-link {
-            color: #fff !important;
-        }
+.navbar-brand img {
+    height: 50px;
+    width: auto;
+}
 
-        .btn-get-started {
-            background-color: #0056b3;
-            color: #fff;
-            font-size: 20px;
-            padding: 10px 20px;
-            border-radius: 5px;
-            border: none;
-        }
+.navbar-nav .nav-link {
+    color: #18cece !important;
+    font-weight: bold;
+    font-size: 20px;
+}
 
-        .btn-get-started:hover {
-            background-color: #004494;
-        }
+.navbar-nav .nav-link:hover{
+    color: #c3f3f3 !important;
+    font-weight: bolder;
+    font-size: 20px;
+}
 
-        .section {
-            padding: 60px 0;
-        }
+/* Button */
+.btn-get-started {
+    background-color: rgb(13, 167, 167);
+    color: #fff;
+    font-size: 20px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+}
 
-        .ware{
-          color: #1fafc9;
-          font-size: 30px;
-          font-weight:bolder;
-        }
+.btn-get-started:hover {
+    background-color: whitesmoke;
+    font-weight: bold;
+    color: #055f6e;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    border: rgb(36, 236, 236);
+    border-width: 20px;
+    text-decoration: none;
 
-        .life{
-          color: whitesmoke;
-          font-size: 30px;
-          font-weight: bolder;
-        }
+}
 
-         /* Go up arrow */
+/* Section */
+.section {
+    padding: 60px 0;
+    background-color: darkslategray;
+    
+}
 
-         #goUp {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            display: none;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 50%;
-            padding: 10px;
-            z-index: 1000;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
-        }
+.ware {
+    color: #1fafc9;
+    font-size: 30px;
+    font-weight: bolder;
+}
 
-        #goUp:hover {
-            background-color: #0056b3;
-        }
+.life {
+    color: whitesmoke;
+    font-size: 30px;
+    font-weight: bolder;
+}
 
-        html {
-            scroll-behavior: smooth;
-        }
+/* Go up arrow */
+#goUp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    background-color: darkslategray;
+    color: white;
+    border: none;
+    border-radius: 10%;
+    padding: 10px;
+    z-index: 1000;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+#goUp:hover {
+    background-color: #055f6e;
+    color: #022c33;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* FOOTER SECTION */
+
+.footer {
+    position: relative;
+    margin-top: 45px;
+    padding-top: 80px;
+    background: rgb(11, 70, 80);
+}
+
+.footer .footer-contact,
+.footer .footer-link,
+.footer .footer-newsletter {
+    position: relative;
+    margin-bottom: 30px;
+    color: #ffffff;
+}
+
+.footer .footer-contact h2,
+.footer .footer-link h2,
+.footer .footer-newsletter h2 {
+    position: relative;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    font-size: 22px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    color: #ffffff;
+}
+
+.footer .footer-contact h2::after,
+.footer .footer-link h2::after,
+.footer .footer-newsletter h2::after {
+    position: absolute;
+    content: "";
+    width: 45px;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background: rgb(36, 236, 236);
+}
+
+.footer .footer-link a {
+    display: block;
+    margin-bottom: 8px;
+    color: #ffffff;
+    transition: .3s;
+}
+
+.footer .footer-link a::before {
+    position: relative;
+    content: "\f105";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    margin-right: 10px;
+}
+
+.footer .footer-link a:hover {
+    color: rgb(36, 236, 236);
+    letter-spacing: 1px;
+    text-decoration: none;
+}
+
+.footer .footer-contact p i {
+    width: 25px;
+}
+
+.footer .footer-social {
+    position: relative;
+    margin-top: 15px;
+}
+
+.footer .footer-social a {
+    display: inline-block;
+}
+
+.footer .footer-social a i {
+    margin-right: 15px;
+    font-size: 18px;
+    color: #092a49;
+}
+
+.footer .footer-social a:last-child i {
+    margin: 0;
+}
+
+.footer .footer-social a:hover i {
+    color: rgb(36, 236, 236);
+}
+
+.footer .footer-newsletter .form {
+    position: relative;
+    width: 100%;
+}
+
+.footer .footer-newsletter input {
+    height: 60px;
+    border: 2px solid #1d2434;
+    border-radius: 0;
+}
+
+.footer .footer-newsletter .btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    height: 44px;
+    padding: 8px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #092a49;
+    background: none;
+    border-radius: 0;
+    border: 2px solid #092a49;
+    transition: .3s;
+}
+
+.footer .footer-newsletter .btn:hover {
+    color: rgb(36, 236, 236);
+    background: darkslategray;
+}
+
+.footer .copyright {
+    padding: 0 30px;
+}
+
+.footer .copyright .row {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    border-top: 1px solid rgba(256, 256, 256, .1);
+}
+
+.footer .copyright p {
+    margin: 0;
+    color: #999999;
+}
+
+.footer .copyright .col-md-6:last-child p {
+    text-align: right;
+}
+
+.footer .copyright p a {
+    color: #09cccc;
+}
+
+.footer .copyright p a:hover {
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+@media (max-width: 767.98px) {
+    .footer .copyright p,
+    .footer .copyright .col-md-6:last-child p {
+        margin: 5px 0;
+        text-align: center;
+    }
+}
+/* FOOTER ENDS HERE */
+
+/* Testimonials */
+.testimonial {
+    justify-content: center;
+    gap: 30px;
+}
+
+.contain {
+    position: relative;
+    width: 20%;
+}
+
+.image {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 100%;
+    right: 0;
+    background-color: darkslategray;
+    overflow: hidden;
+    width: 0;
+    height: 100%;
+    transition: .5s ease;
+}
+
+.contain:hover .overlay {
+    width: 100%;
+    left: 0;
+}
+
+.text {
+    color: whitesmoke;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+}
+
+@media (max-width: 767.98px) {
+ .text{
+    
+    }
+}
+
+.text-center{
+    color: whitesmoke;
+    font-weight: bolder;
+}
+
+.section{
+    
+}
 
     </style>
 </head>
 
 <body>
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <a class="navbar-brand" href="./index.html">
-            <img src="./image/LOGO.PNG" alt="LifeWARE Logo"> <span class="life">Life</span><span class="ware">WARE</span>
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#about">About Us</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./services.html">Services</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./contact.html">Contact</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="./form.html">Form</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="./dashboard.html">Dashboard</a>
-              </li>
-            </ul>
-        </div>
-    </nav>
+   <!-- Navbar -->
+   <nav class="navbar navbar-expand-lg navbar-dark">
+    <a class="navbar-brand" href="./index.html">
+        <img src="./image/LOGO.PNG" alt="LifeWARE Logo"> <span class="life">Life</span><span class="ware">WARE</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="./index.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#about">About Us</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="./services.html">Services</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="./contact.html">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./form.html">Form</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./dashboard.html">Dashboard</a>
+          </li>
+        </ul>
+    </div>
+</nav>
+
 
     <!-- Carousel -->
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -147,9 +410,9 @@
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <img src="./image/building.jpg" alt="Slide 1">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Welcome to LifeWARE</h5>
-                    <p>Your health, our priority.</p>
+                <div class="carousel-caption d-none d-md-block pb-5">
+                    <h1>Welcome to LifeWARE</h1>
+                    <h3 class="pb-4">Your health, our priority.</h3>
                     <a href="#contact" class="btn-get-started">Get Started</a>
                 </div>
             </div>
@@ -191,10 +454,23 @@
             <div class="row">
                 <div class="col-md-6">
                     <h2>About Us</h2>
-                    <p>LifeWARE Hospital is dedicated to providing the best healthcare services. Our state-of-the-art facilities and compassionate staff ensure the highest level of care for all our patients.</p>
+                    <img src="./image/LOGO.PNG" alt="About Us" class="img-fluid">
+                    <p>
+                        
+                        LifeWARE Hospital is dedicated to providing the best healthcare services. Our state-of-the-art facilities and compassionate staff ensure the highest level of care for all our patients.
+                        Since 1999, LifeWare is at the forefront of modern medicine and is still growing 
+                        into a complex integrated health system with a state of the art equipment and best 
+                        specialist and caregivers. We are a multispeciality medical center that integrates 
+                        clinical and hospital care with research and education. Now 25 years, the vision of 
+                        the founders of LifeWare remains its mission- caring for life, researching for 
+                        health, and educating those who serve. We are committed to providing evidence based 
+                        patients centered healthcare solutions, by ensuring easy access to good quality 
+                        healthcare. This is because you deserve the best.
+                        
+                    </p>
                 </div>
-                <div class="col-md-6">
-                    <img src="./images/doctor1.jpg" alt="About Us" class="img-fluid">
+                <div class="col-md-6 pb-5">
+                    <img src="./image/building2.webp" alt="About Us" class="img-fluid">
                 </div>
             </div>
         </div>
@@ -203,7 +479,7 @@
     <!-- Services Section -->
     <section id="services" class="section">
         <div class="container">
-            <h2 style="text-align: center; margin-bottom: 20px;">Our Services</h2>
+            <h2 style="text-align: center; margin-bottom: 20px; color: whitesmoke; margin-bottom: 30px;">Our Services</h2>
             <div class="row">
                 <div class="col-md-4">
                     <div class="card service-card">
@@ -239,7 +515,7 @@
     <!-- Contact Section -->
     <section id="contact" class="section bg-light">
         <div class="container">
-            <h2>Contact Us</h2>
+            <h2 style="color: #055f6e; font-weight: bold;">Contact Us</h2>
             <form>
                 <div class="form-group">
                     <label for="name">Name</label>
@@ -258,90 +534,100 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-dark text-white pt-2 pb-2">
-      <div class="container">
+            <!-- Testimonial Start -->
+            <h2 class="text-center">Testimonies from our esteem clients</h2>
+            <p class="text-center">100% Positive Customer Reviews</p>
+        <div class="testimonial d-flex">
+            <div class="contain">
+              <img src="./images/doctor1.jpg" alt="Avatar" class="image">
+              <div class="overlay">
+                <h2>Mr. Duke Ighodalo</h2>
+                <!-- <div class="text"></div> -->
+                <p>As an out-patient who was once diagnosed 
+                    with fibroid, i thank LifeWARE for paying attention to my health.</p>
+              </div>
+            </div>
 
-                  <!-- Newsletter Signup -->
-                  <div class="row mb-2 pt-2">
-                    <div class="col-md-12">
-                        <h5>Subscribe to Our Newsletter</h5>
-                        <form action="#" method="post" class="form-inline">
-                            <div class="form-group mx-sm-3 mb-2 flex-fill">
-                                <input type="email" class="form-control w-100" id="email" placeholder="Enter your email">
+            <div class="contain">
+                <img src="./images/doctor2.jpg" alt="Avatar" class="image">
+                <div class="overlay">
+                  <div class="text">Hello World</div>
+                </div>
+              </div>
+
+              <div class="contain">
+                <img src="./images/doctor3.jpg" alt="Avatar" class="image">
+                <div class="overlay">
+                  <div class="text">Hello World</div>
+                </div>
+              </div>
+            </div>
+            <!-- Testimonial End -->
+
+<!-- Footer Start -->
+<div class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="footer-contact">
+                            <h2>Our Head Office</h2>
+                            <p><i class="fa fa-map-marker-alt"></i>56 slaughter, umukoro, rumauroko, PH Nigeria</p>
+                            <p><i class="fa fa-phone-alt"></i>+234 703 971 3632</p>
+                            <p><i class="fa fa-envelope"></i>info@lifeware.com</p>
+                            <div class="footer-social">
+                                <a href=""><i class="fab fa-twitter"></i></a>
+                                <a href=""><i class="fab fa-facebook-f"></i></a>
+                                <a href=""><i class="fab fa-youtube"></i></a>
+                                <a href=""><i class="fab fa-instagram"></i></a>
+                                <a href=""><i class="fab fa-linkedin-in"></i></a>
                             </div>
-                            <button type="submit" class="btn btn-primary mb-2">Subscribe</button>
-                        </form>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="footer-link">
+                            <h2>Quick Links</h2>
+                            <a href="">Terms of use</a>
+                            <a href="">Privacy policy</a>
+                            <a href="">Cookies</a>
+                            <a href="">Help</a>
+                            <a href="">FQAs</a>
+                        </div>
                     </div>
                 </div>
-
-          <div class="row">
-              <!-- Contact Information -->
-              <div class="col-md-4 mb-2">
-                  <h5>Contact Us</h5>
-                  <ul class="list-unstyled">
-                      <li><i class="fas fa-map-marker-alt"></i>1/5 Mike Maduabuchi Street Ago Palaceway, Lagos.</li>
-                      <li><i class="fas fa-phone"></i> +234 (70) 397-13632</li>
-                      <li><i class="fas fa-envelope"></i> <a href="mailto:info@lifewarehospital.com" class="text-white">info@lifewarehospital.com</a></li>
-                  </ul>
-              </div>
-  
-              <!-- Quick Links -->
-              <div class="col-md-4 mb-2">
-                  <h5>Quick Links</h5>
-                  <ul class="list-unstyled">
-                      <li><a href="#home" class="text-white">Home</a></li>
-                      <li><a href="#about" class="text-white">About Us</a></li>
-                      <li><a href="#services" class="text-white">Services</a></li>
-                      <li><a href="#contact" class="text-white">Contact</a></li>
-                      <li><a href="#careers" class="text-white">Careers</a></li>
-                  </ul>
-              </div>
-  
-              <!-- Services -->
-              <div class="col-md-4 mb-2">
-                  <h5>Our Services</h5>
-                  <ul class="list-unstyled">
-                      <li><a href="#" class="text-white">Emergency Care</a></li>
-                      <li><a href="#" class="text-white">General Medicine</a></li>
-                      <li><a href="#" class="text-white">Specialist Care</a></li>
-                      <li><a href="#" class="text-white">Pediatrics</a></li>
-                      <li><a href="#" class="text-white">Surgery</a></li>
-                  </ul>
-              </div>
-          </div>
-  
-          <!-- Social Media Links -->
-          <div class="row mb-2">
-              <div class="col text-center">
-                  <h5>Follow Us</h5>
-                  <a href="https://facebook.com" class="text-white mx-2" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                  <a href="https://twitter.com" class="text-white mx-2" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                  <a href="https://instagram.com" class="text-white mx-2" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                  <a href="https://linkedin.com" class="text-white mx-2" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                  <a href="https://youtube.com" class="text-white mx-2" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-              </div>
-          </div>
-  
-          <!-- Copyright -->
-          <div class="row">
-              <div class="col text-center">
-                  <p>&copy; 2024 LifeWARE Hospital. All rights reserved.</p>
-              </div>
-          </div>
-      </div>
-
-      <!-- Copyright -->
-      <div class="row">
-        <div class="col text-center">
-            <p>&copy; 2024 LifeWARE Hospital. All rights reserved.</p>
+            </div>
+            <div class="col-lg-5">
+                <div class="footer-newsletter">
+                    <h2>Newsletter</h2>
+                    <p>
+                        Our model also ensures a seamless flow within the hospital for the acutely ill. 
+                        LifeWARE also tolerates one on one interaction with doctors and care givers
+                    </p>
+                    <div class="form">
+                        <input class="form-control" placeholder="Email goes here">
+                        <button class="btn">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container copyright">
+        <div class="row">
+            <div class="col-md-6">
+                <p>&copy; <a href="#">LifeWARE</a>, All Right Reserved 2024.</p>
+            </div>
+            <div class="col-md-6">
+                <p>Designed By <a href="https://github.com/Tschuddy?tab=repositories">Tschuddy</a></p>
+            </div>
         </div>
     </div>
 </div>
+<!-- Footer End -->
 
 <button id="goUp" onclick="scrollToTop()">
-  <i class="fas fa-arrow-up"></i>
-</button>
+    <i class="fas fa-arrow-up"></i>
+  </button>
 
 <script>
   // Show the button when the user scrolls down 100px from the top of the document
@@ -359,8 +645,50 @@
       document.body.scrollTop = 0; // For Safari
       document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
   }
+
 </script>
-  </footer>
+
+<script>
+    $(document).ready(function(){
+        $(".testimonials-carousel").owlCarousel({
+            items: 3,
+            loop: true,
+            autoplay: true,
+            autoplayTimeout: 3000,
+            autoplayHoverPause: true,
+            nav: true,
+            dots: true,
+            rtl: true // Right to left sliding
+        });
+    });
+
+
+  // Show the button when the user scrolls down 100px from the top of the document
+window.onscroll = function() {
+    let goUpButton = document.getElementById("goUp");
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        goUpButton.style.display = "block";
+    } else {
+        goUpButton.style.display = "none";
+    }
+
+    // Sticky Navbar
+    if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0) {
+        document.querySelector('.navbar').classList.add('navbar-sticky');
+    } else {
+        document.querySelector('.navbar').classList.remove('navbar-sticky');
+    }
+};
+
+// Function to scroll to the top of the document
+function scrollToTop() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+
+</script>
+
+ 
   
   
   <!-- FontAwesome CDN -->
@@ -371,6 +699,11 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="path/to/jquery.min.js"></script>
+    <script src="path/to/owl.carousel.min.js"></script>
+
+        
+
 </body>
 
 </html>

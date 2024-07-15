@@ -8,41 +8,110 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <style>
-        .carousel-item img {
-            width: 100%;
-            height: 550px;
-            object-fit: cover;
+body{
+    background-color: #043535;
+}
+
+/* Carousel item image */
+.carousel-item img {
+    width: 100%;
+    height: 550px;
+    object-fit: cover;
+}
+
+.carousel-caption{
+    padding: 30px;
+    width: 50%;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-width: 10px;
+    border-radius: 30px;
+    margin-bottom: 80px;
+}
+
+/* Card */
+.card {
+    background-color: rgb(22, 121, 121);
+    border: none;
+    color: whitesmoke;
+}
+
+/* CARD BUTTONS */
+.btn-block{
+            background: rgb(13, 167, 167);
+            color: whitesmoke;
         }
 
-        .navbar {
-            background-color: #0056b3;
+        .btn-block:hover{
+            background: whitesmoke;
+            color: rgb(13, 167, 167);
+            border-style: solid 20px;
+            border-color: rgb(13, 167, 167);
         }
 
-        .navbar-brand {
-            color: #fff;
-        }
+        /* CARD BUTTONS ENDS HERE */
 
-        .navbar-brand img {
-            height: 50px;
-            width: auto;
-        }
+.service-card:hover {
+    transition: background-color 0.3s ease;
+    transform: translateY(-10px);
+    box-shadow: 0 0 25px rgb(138, 240, 240);
+}
 
-        .navbar-nav .nav-link {
-            color: #fff !important;
-        }
+.card-body {
+    transition: background-color 0.3s ease;
+}
 
-        .btn-get-started {
-            background-color: #0056b3;
-            color: #fff;
-            font-size: 20px;
-            padding: 10px 20px;
-            border-radius: 5px;
-            border: none;
-        }
+/* Navbar */
+.navbar {
+    background-color: rgb(20, 77, 77);
+    transition: rgb(95, 186, 214) 0.3s ease;
+}
 
-        .btn-get-started:hover {
-            background-color: #004494;
-        }
+.navbar-sticky {
+    background-color: #0056b3;
+}
+
+.navbar-brand {
+    color: #fff;
+}
+
+.navbar-brand img {
+    height: 50px;
+    width: auto;
+}
+
+.navbar-nav .nav-link {
+    color: #18cece !important;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.navbar-nav .nav-link:hover{
+    color: #c3f3f3 !important;
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+/* Button */
+.btn-get-started {
+    background-color: rgb(13, 167, 167);
+    color: #fff;
+    font-size: 20px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+}
+
+.btn-get-started:hover {
+    background-color: whitesmoke;
+    font-weight: bold;
+    color: #055f6e;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    border: rgb(36, 236, 236);
+    border-width: 20px;
+    text-decoration: none;
+
+}
 
         .content {
             position: relative;
@@ -55,8 +124,9 @@
         }
 
         .card-header {
-            background-color: #0056b3;
-            color: #fff;
+            background-color: rgb(22, 121, 121);
+            border: none;
+            color: whitesmoke;
         }
 
         .card-body {
@@ -68,41 +138,198 @@
             height: 100vh;
         }
 
-        .ware{
-          color: #1fafc9;
-          font-size: 30px;
-          font-weight:bolder;
-        }
+        .ware {
+    color: #1fafc9;
+    font-size: 30px;
+    font-weight: bolder;
+}
 
-        .life{
-          color: whitesmoke;
-          font-size: 30px;
-          font-weight: bolder;
-        }
+.life {
+    color: whitesmoke;
+    font-size: 30px;
+    font-weight: bolder;
+}
 
-         /* Go up arrow */
+/* Go up arrow */
+#goUp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    background-color: darkslategray;
+    color: white;
+    border: none;
+    border-radius: 10%;
+    padding: 10px;
+    z-index: 1000;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
 
-         #goUp {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            display: none;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 50%;
-            padding: 10px;
-            z-index: 1000;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
-        }
+#goUp:hover {
+    background-color: #055f6e;
+    color: #022c33;
+}
 
-        #goUp:hover {
-            background-color: #0056b3;
-        }
+html {
+    scroll-behavior: smooth;
+}
+        
+/* FOOTER SECTION */
 
-        html {
-            scroll-behavior: smooth;
-        }
+.footer {
+    position: relative;
+    margin-top: 45px;
+    padding-top: 80px;
+    background: rgb(11, 70, 80);
+}
+
+.footer .footer-contact,
+.footer .footer-link,
+.footer .footer-newsletter {
+    position: relative;
+    margin-bottom: 30px;
+    color: #ffffff;
+}
+
+.footer .footer-contact h2,
+.footer .footer-link h2,
+.footer .footer-newsletter h2 {
+    position: relative;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    font-size: 22px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    color: #ffffff;
+}
+
+.footer .footer-contact h2::after,
+.footer .footer-link h2::after,
+.footer .footer-newsletter h2::after {
+    position: absolute;
+    content: "";
+    width: 45px;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background: rgb(36, 236, 236);
+}
+
+.footer .footer-link a {
+    display: block;
+    margin-bottom: 8px;
+    color: #ffffff;
+    transition: .3s;
+}
+
+.footer .footer-link a::before {
+    position: relative;
+    content: "\f105";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    margin-right: 10px;
+}
+
+.footer .footer-link a:hover {
+    color: rgb(36, 236, 236);
+    letter-spacing: 1px;
+    text-decoration: none;
+}
+
+.footer .footer-contact p i {
+    width: 25px;
+}
+
+.footer .footer-social {
+    position: relative;
+    margin-top: 15px;
+}
+
+.footer .footer-social a {
+    display: inline-block;
+}
+
+.footer .footer-social a i {
+    margin-right: 15px;
+    font-size: 18px;
+    color: #092a49;
+}
+
+.footer .footer-social a:last-child i {
+    margin: 0;
+}
+
+.footer .footer-social a:hover i {
+    color: rgb(36, 236, 236);
+}
+
+.footer .footer-newsletter .form {
+    position: relative;
+    width: 100%;
+}
+
+.footer .footer-newsletter input {
+    height: 60px;
+    border: 2px solid #1d2434;
+    border-radius: 0;
+}
+
+.footer .footer-newsletter .btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    height: 44px;
+    padding: 8px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #092a49;
+    background: none;
+    border-radius: 0;
+    border: 2px solid #092a49;
+    transition: .3s;
+}
+
+.footer .footer-newsletter .btn:hover {
+    color: rgb(36, 236, 236);
+    background: darkslategray;
+}
+
+.footer .copyright {
+    padding: 0 30px;
+}
+
+.footer .copyright .row {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    border-top: 1px solid rgba(256, 256, 256, .1);
+}
+
+.footer .copyright p {
+    margin: 0;
+    color: #999999;
+}
+
+.footer .copyright .col-md-6:last-child p {
+    text-align: right;
+}
+
+.footer .copyright p a {
+    color: #09cccc;
+}
+
+.footer .copyright p a:hover {
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+@media (max-width: 767.98px) {
+    .footer .copyright p,
+    .footer .copyright .col-md-6:last-child p {
+        margin: 5px 0;
+        text-align: center;
+    }
+}
+/* FOOTER ENDS HERE */
 
     </style>
 </head>
@@ -153,8 +380,8 @@
           <div class="carousel-item active">
               <img src="./image/building.jpg" alt="Slide 1">
               <div class="carousel-caption d-none d-md-block">
-                  <h5>Welcome to LifeWARE</h5>
-                  <p>Your health, our priority.</p>
+                  <h1>Welcome to LifeWARE</h1>
+                  <h3 class="pb-4">Your health, our priority.</h3>
                   <a href="#contact" class="btn-get-started">Get Started</a>
               </div>
           </div>
@@ -229,7 +456,7 @@
                                     <label for="ecSymptoms">Symptoms</label>
                                     <textarea class="form-control" id="ecSymptoms" rows="3" placeholder="Describe your symptoms"></textarea>
                                 </div>
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button type="submit" class="btn btn-block">Submit</button>
                             </form>
                         </div>
                     </div>
@@ -265,7 +492,7 @@
                                     <label for="gmReason">Reason for Visit</label>
                                     <textarea class="form-control" id="gmReason" rows="3" placeholder="Describe the reason for your visit"></textarea>
                                 </div>
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button type="submit" class="btn btn-block">Submit</button>
                             </form>
                         </div>
                     </div>
@@ -301,7 +528,7 @@
                                     <label for="cardioSymptoms">Symptoms</label>
                                     <textarea class="form-control" id="cardioSymptoms" rows="3" placeholder="Describe your symptoms"></textarea>
                                 </div>
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button type="submit" class="btn btn-block">Submit</button>
                             </form>
                         </div>
                     </div>
@@ -337,7 +564,7 @@
                                     <label for="pedSymptoms">Symptoms</label>
                                     <textarea class="form-control" id="pedSymptoms" rows="3" placeholder="Describe your child's symptoms"></textarea>
                                 </div>
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button type="submit" class="btn btn-block">Submit</button>
                             </form>
                         </div>
                     </div>
@@ -377,7 +604,7 @@
                                     <label for="surgeryHistory">Surgery History</label>
                                     <textarea class="form-control" id="surgeryHistory" rows="3" placeholder="Describe any previous surgeries"></textarea>
                                 </div>
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button type="submit" class="btn btn-block">Submit</button>
                             </form>
                         </div>
                     </div>
@@ -386,86 +613,67 @@
         </div>
     </div>
 
-    <!-- Footer -->
-    <footer class="bg-dark text-white pt-2 pb-2">
-      <div class="container">
-
-                  <!-- Newsletter Signup -->
-                  <div class="row mb-2 pt-2">
-                    <div class="col-md-12">
-                        <h5>Subscribe to Our Newsletter</h5>
-                        <form action="#" method="post" class="form-inline">
-                            <div class="form-group mx-sm-3 mb-2 flex-fill">
-                                <input type="email" class="form-control w-100" id="email" placeholder="Enter your email">
+<!-- Footer Start -->
+<div class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="footer-contact">
+                            <h2>Our Head Office</h2>
+                            <p><i class="fa fa-map-marker-alt"></i>56 slaughter, umukoro, rumauroko, PH Nigeria</p>
+                            <p><i class="fa fa-phone-alt"></i>+234 703 971 3632</p>
+                            <p><i class="fa fa-envelope"></i>ironthroneking1@gmail.com</p>
+                            <div class="footer-social">
+                                <a href=""><i class="fab fa-twitter"></i></a>
+                                <a href=""><i class="fab fa-facebook-f"></i></a>
+                                <a href=""><i class="fab fa-youtube"></i></a>
+                                <a href=""><i class="fab fa-instagram"></i></a>
+                                <a href=""><i class="fab fa-linkedin-in"></i></a>
                             </div>
-                            <button type="submit" class="btn btn-primary mb-2">Subscribe</button>
-                        </form>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="footer-link">
+                            <h2>Quick Links</h2>
+                            <a href="">Terms of use</a>
+                            <a href="">Privacy policy</a>
+                            <a href="">Cookies</a>
+                            <a href="">Help</a>
+                            <a href="">FQAs</a>
+                        </div>
                     </div>
                 </div>
-
-          <div class="row">
-              <!-- Contact Information -->
-              <div class="col-md-4 mb-2">
-                  <h5>Contact Us</h5>
-                  <ul class="list-unstyled">
-                      <li><i class="fas fa-map-marker-alt"></i>1/5 Mike Maduabuchi Street Ago Palaceway, Lagos.</li>
-                      <li><i class="fas fa-phone"></i> +234 (70) 397-13632</li>
-                      <li><i class="fas fa-envelope"></i> <a href="mailto:info@lifewarehospital.com" class="text-white">info@lifewarehospital.com</a></li>
-                  </ul>
-              </div>
-  
-              <!-- Quick Links -->
-              <div class="col-md-4 mb-2">
-                  <h5>Quick Links</h5>
-                  <ul class="list-unstyled">
-                      <li><a href="#home" class="text-white">Home</a></li>
-                      <li><a href="#about" class="text-white">About Us</a></li>
-                      <li><a href="#services" class="text-white">Services</a></li>
-                      <li><a href="#contact" class="text-white">Contact</a></li>
-                      <li><a href="#careers" class="text-white">Careers</a></li>
-                  </ul>
-              </div>
-  
-              <!-- Services -->
-              <div class="col-md-4 mb-2">
-                  <h5>Our Services</h5>
-                  <ul class="list-unstyled">
-                      <li><a href="#" class="text-white">Emergency Care</a></li>
-                      <li><a href="#" class="text-white">General Medicine</a></li>
-                      <li><a href="#" class="text-white">Specialist Care</a></li>
-                      <li><a href="#" class="text-white">Pediatrics</a></li>
-                      <li><a href="#" class="text-white">Surgery</a></li>
-                  </ul>
-              </div>
-          </div>
-  
-          <!-- Social Media Links -->
-          <div class="row mb-2">
-              <div class="col text-center">
-                  <h5>Follow Us</h5>
-                  <a href="https://facebook.com" class="text-white mx-2" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                  <a href="https://twitter.com" class="text-white mx-2" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                  <a href="https://instagram.com" class="text-white mx-2" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                  <a href="https://linkedin.com" class="text-white mx-2" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                  <a href="https://youtube.com" class="text-white mx-2" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-              </div>
-          </div>
-  
-          <!-- Copyright -->
-          <div class="row">
-              <div class="col text-center">
-                  <p>&copy; 2024 LifeWARE Hospital. All rights reserved.</p>
-              </div>
-          </div>
-      </div>
-
-      <!-- Copyright -->
-      <div class="row">
-        <div class="col text-center">
-            <p>&copy; 2024 LifeWARE Hospital. All rights reserved.</p>
+            </div>
+            <div class="col-lg-5">
+                <div class="footer-newsletter">
+                    <h2>Newsletter</h2>
+                    <p>
+                        Our model also ensures a seamless flow within the hospital for the acutely ill. 
+                        LifeWARE also tolerates one on one interaction with doctors and care givers
+                    </p>
+                    <div class="form">
+                        <input class="form-control" placeholder="Email goes here">
+                        <button class="btn">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container copyright">
+        <div class="row">
+            <div class="col-md-6">
+                <p>&copy; <a href="#">LifeWARE</a>, All Right Reserved 2024.</p>
+            </div>
+            <div class="col-md-6">
+                <p>Designed By <a href="https://github.com/Tschuddy?tab=repositories">Tschuddy</a></p>
+            </div>
         </div>
     </div>
 </div>
+<!-- Footer End -->
+
 
 <button id="goUp" onclick="scrollToTop()">
   <i class="fas fa-arrow-up"></i>
@@ -488,7 +696,7 @@
       document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
   }
 </script>
-  </footer>
+  
 
     <!-- Bootstrap and jQuery JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
