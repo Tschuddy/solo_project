@@ -9,16 +9,17 @@
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="shortcut icon" href="./image/LOGO.PNG" type="image/x-icon">
+    <link rel="shortcut icon" href="./image/images.jpg" type="image/x-icon">
     <title>LifeWARE.com/Dashboard</title>
 </head>
+
 
 <body>
     <section class="header">
         <div class="logo">
             <i class="ri-menu-line icon icon-0 menu" style="color: #28869b; cursor: pointer; font-weight: bolder;"></i>
             <a href="./index.html"><h2>Life<span>WARE</span></h2></a>
-            <!-- <a href=""><img src="./image/LOGO.PNG" alt=""></a> -->
+            
         </div>
         <div class="search--notification--profile">
             <div class="search">
@@ -35,8 +36,63 @@
                 <div class="picon chat">
                     <i class="ri-wechat-2-line"></i>
                 </div>
-                <div class="picon profile">
+                <div class="picon profile" id="user-icon">
                     <img src="assets/images/profile.jpg" alt="">
+                    <div class="auth-container" id="auth-container">
+                        <div class="auth-form login-form" id="login-form">
+                            <h2>Login</h2>
+                            <label for="login-username">Username:</label>
+                            <input type="text" id="login-username" name="username" required>
+                            
+                            <label for="login-password">Password:</label>
+                            <input type="password" id="login-password" name="password" required>
+                            
+                            <button onclick="login()">Login</button>
+                            
+                            <p>Don't have an account? <a href="#" id="switch-to-signup">Sign Up</a>  OR  <a href="./dashboard.html" id="switch-to-signup">Go Back</a></p>
+                        </div>
+                    
+                        <div class="auth-form signup-form" id="signup-form" style="display: none;">
+                            <h2>Sign Up as In-Patient</h2>
+                            <form id="signup-form-element">
+                                <label for="signup-full-name">Full Name:</label>
+                                <input type="text" id="signup-full-name" name="full-name" required>
+                    
+                                <label for="signup-dob">Date of Birth:</label>
+                                <input type="date" id="signup-dob" name="dob" required>
+                    
+                                <label for="signup-email">Email:</label>
+                                <input type="email" id="signup-email" name="email" required>
+                    
+                                <label for="signup-phone">Phone Number:</label>
+                                <input type="tel" id="signup-phone" name="phone" required>
+                    
+                                <label for="signup-address">Address:</label>
+                                <input type="text" id="signup-address" name="address" required>
+                    
+                                <label for="signup-medical-history">Medical History:</label>
+                                <textarea id="signup-medical-history" name="medical-history" rows="4"></textarea>
+                    
+                                <label for="signup-password">Password:</label>
+                                <input type="password" id="signup-password" name="password" required>
+                    
+                                <label for="signup-confirm-password">Confirm Password:</label>
+                                <input type="password" id="signup-confirm-password" name="confirm-password" required>
+                    
+                                <button type="submit">Sign Up</button>
+                            </form>
+                            <p>Already have an account? <a href="#" id="switch-to-login">Login</a>  OR  <a href="./dashboard.html" id="switch-to-login">Back to Dashboard</a></p>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    
+                    
+    </div>
+</div>
+                    
+                    
                 </div>
             </div>
         </div>
@@ -63,9 +119,9 @@
                     </a>
                 </li>
                 <li>
-                    <a href="./department.html">
+                    <a href="./services.html">
                         <span class="icon icon-3"><i class="ri-user-2-line"></i></span>
-                        <span class="sidebar--item" style="white-space: nowrap;">Departments</span>
+                        <span class="sidebar--item" style="white-space: nowrap;">Services</span>
                     </a>
                 </li>
                 <li>
@@ -376,6 +432,58 @@
     </div>
 </div>
 <!-- Footer End -->
+
+<script>
+    document.getElementById('user-icon').addEventListener('click', function() {
+        document.getElementById('auth-container').style.display = 'flex';
+    });
+    
+    document.getElementById('switch-to-signup').addEventListener('click', function(event) {
+        event.preventDefault();
+        document.getElementById('login-form').style.display = 'none';
+        document.getElementById('signup-form').style.display = 'block';
+    });
+    
+    document.getElementById('switch-to-login').addEventListener('click', function(event) {
+        event.preventDefault();
+        document.getElementById('signup-form').style.display = 'none';
+        document.getElementById('login-form').style.display = 'block';
+    });
+    
+    document.getElementById('signup-form-element').addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        var password = document.getElementById('signup-password').value;
+        var confirmPassword = document.getElementById('signup-confirm-password').value;
+        
+        if (password !== confirmPassword) {
+            alert("Passwords do not match");
+            return;
+        }
+    
+        // Handle registration logic here
+        alert("Registration successful! Redirecting you to login page...");
+    
+        window.location.href = '/login'; // Replace with your actual login page URL
+    });
+    
+    function login() {
+        var username = document.getElementById('login-username').value;
+    
+        if (username) {
+            document.getElementById('auth-container').style.display = 'none';
+            alert("Welcome, " + username + "! Redirecting you to home page...");
+            window.location.href = 'index.html'; // Replace with your actual home page URL
+        } else {
+            alert("Please enter a username");
+        }
+    }
+    
+    
+    
+
+
+</script>
 
 
     
